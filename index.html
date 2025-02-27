@@ -6,7 +6,7 @@
         content="Parameter Efficient Fine-Tuning for Multi-Task Learning using Diffeomorphisms">
   <meta name="keywords" content="MTL, Fine-Tuning, Diffeomorphisms, SVD">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title style= "font-variant-caps: small-caps;">DiTask: Deformable Neural Radiance Fields</title>
+  <title style= "font-variant-caps: small-caps;">DiTask: Multi-Task Fine-Tuning with Diffeomorphic Transformations</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -117,21 +117,24 @@
             <span class="author-block"><sup>3</sup>Ben-Gurion University of the Negev</span>
             <!-- <span class="author-block"><sup>&dagger;</sup>Equal Supervision</span> -->
           </div>
+          <div class="is-size-3 publication-authors">
+            <span class="author-block"><b>CVPR 2025</b></span>
+          </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2502.06029"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
                   <span>Paper</span>
                 </a>
-              </span> -->
+              </span>
               <span class="link-block">
-                <a href="https://github.com/ipsitmantri/DiTASK"
+                <a href="https://arxiv.org/abs/2502.06029"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -237,16 +240,250 @@
 
       <div class="content">
         <h2 class="title is-3">Qualitative Comparison</h2>
-        <div class="columns is-centered">
-          <div class="column is-10">
-            <img src="./static/images/pascal.png"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-                 <img src="./static/images/nyud.png"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
+        <h3 class="title is-4">Semantic Segmentation</h3>
+        <section class="hero is-light is-small">
+          <div class="hero-body">
+            <div class="container">
+              <div id="results-carousel" class="carousel results-carousel">
+                <!-- Item 1-2 -->
+                <div class="item item-segmentation-1">
+                  <div class="comparison-grid">
+                    <div class="comparison-row">
+                      <div class="comparison-header">
+                        <div class="column-label">Input Image</div>
+                        <div class="column-label">MTLoRA</div>
+                        <div class="column-label">DiTASK</div>
+                        <div class="column-label">Ground Truth</div>
+                      </div>
+                      <div class="comparison-images">
+                        <img src="./static/images/semseg/2010_001049_gt_mtlora.png" alt="Input Image 1">
+                        <img src="./static/images/semseg/2010_001049_semseg_mtlora.png" alt="MTLoRA 1">
+                        <img src="./static/images/semseg/2010_001049_semseg_ditask.png" alt="DiTASK 1">
+                        <img src="./static/images/semseg/2010_001049_mtlora.png" alt="Ground Truth 1">
+                      </div>
+                    </div>
+                    <div class="comparison-row">
+                      <div class="comparison-images">
+                        <img src="./static/images/semseg/2010_000175_gt_mtlora.png" alt="Input Image 2">
+                        <img src="./static/images/semseg/2010_000175_semseg_mtlora.png" alt="MTLoRA 2">
+                        <img src="./static/images/semseg/2010_000175_semseg_ditask.png" alt="DiTASK 2">
+                        <img src="./static/images/semseg/2010_000175_mtlora.png" alt="Ground Truth 2">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Item 3-4 -->
+                <div class="item item-segmentation-2">
+                  <div class="comparison-grid">
+                    <div class="comparison-row">
+                      <div class="comparison-header">
+                        <div class="column-label">Input Image</div>
+                        <div class="column-label">MTLoRA</div>
+                        <div class="column-label">DiTASK</div>
+                        <div class="column-label">Ground Truth</div>
+                      </div>
+                      <div class="comparison-images">
+                        <img src="./static/images/semseg/2010_000309_gt_mtlora.png" alt="Input Image 3">
+                        <img src="./static/images/semseg/2010_000309_semseg_mtlora.png" alt="MTLoRA 3">
+                        <img src="./static/images/semseg/2010_000309_semseg_ditask.png" alt="DiTASK 3">
+                        <img src="./static/images/semseg/2010_000309_mtlora.png" alt="Ground Truth 3">
+                      </div>
+                    </div>
+                    <div class="comparison-row">
+                      <div class="comparison-images">
+                        <img src="./static/images/semseg/2010_000139_gt_mtlora.png" alt="Input Image 4">
+                        <img src="./static/images/semseg/2010_000139_semseg_mtlora.png" alt="MTLoRA 4">
+                        <img src="./static/images/semseg/2010_000139_semseg_ditask.png" alt="DiTASK 4">
+                        <img src="./static/images/semseg/2010_000139_mtlora.png" alt="Ground Truth 4">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Item 5-6 -->
+                <div class="item item-segmentation-3">
+                  <div class="comparison-grid">
+                    <div class="comparison-row">
+                      <div class="comparison-header">
+                        <div class="column-label">Input Image</div>
+                        <div class="column-label">MTLoRA</div>
+                        <div class="column-label">DiTASK</div>
+                        <div class="column-label">Ground Truth</div>
+                      </div>
+                      <div class="comparison-images">
+                        <img src="./static/images/semseg/2010_000669_gt_mtlora.png" alt="Input Image 5">
+                        <img src="./static/images/semseg/2010_000669_semseg_mtlora.png" alt="MTLoRA 5">
+                        <img src="./static/images/semseg/2010_000669_semseg_ditask.png" alt="DiTASK 5">
+                        <img src="./static/images/semseg/2010_000669_mtlora.png" alt="Ground Truth 5">
+                      </div>
+                    </div>
+                    <div class="comparison-row">
+                      <div class="comparison-images">
+                        <img src="./static/images/semseg/2010_000993_gt_mtlora.png" alt="Input Image 6">
+                        <img src="./static/images/semseg/2010_000993_semseg_mtlora.png" alt="MTLoRA 6">
+                        <img src="./static/images/semseg/2010_000993_semseg_ditask.png" alt="DiTASK 6">
+                        <img src="./static/images/semseg/2010_000993_mtlora.png" alt="Ground Truth 6">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Item 7-8 -->
+                <div class="item item-segmentation-4">
+                  <div class="comparison-grid">
+                    <div class="comparison-row">
+                      <div class="comparison-header">
+                        <div class="column-label">Input Image</div>
+                        <div class="column-label">MTLoRA</div>
+                        <div class="column-label">DiTASK</div>
+                        <div class="column-label">Ground Truth</div>
+                      </div>
+                      <div class="comparison-images">
+                        <img src="./static/images/semseg/2010_000097_gt_mtlora.png" alt="Input Image 7">
+                        <img src="./static/images/semseg/2010_000097_semseg_mtlora.png" alt="MTLoRA 7">
+                        <img src="./static/images/semseg/2010_000097_semseg_ditask.png" alt="DiTASK 7">
+                        <img src="./static/images/semseg/2010_000097_mtlora.png" alt="Ground Truth 7">
+                      </div>
+                    </div>
+                    <div class="comparison-row">
+                      <div class="comparison-images">
+                        <img src="./static/images/semseg/2010_000099_gt_mtlora.png" alt="Input Image 8">
+                        <img src="./static/images/semseg/2010_000099_semseg_mtlora.png" alt="MTLoRA 8">
+                        <img src="./static/images/semseg/2010_000099_semseg_ditask.png" alt="DiTASK 8">
+                        <img src="./static/images/semseg/2010_000099_mtlora.png" alt="Ground Truth 8">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-      </div>
+        </section>
+        <h3 class="title is-4">Depth Estimation</h3>
+        <section class="hero is-light is-small">
+          <div class="hero-body">
+            <div class="container">
+              <div id="depth-results-carousel" class="carousel results-carousel">
+                <!-- Item 1-2 (Depth 1-2) -->
+                <div class="item item-depth-1">
+                  <div class="comparison-grid">
+                    <div class="comparison-row">
+                      <div class="comparison-header">
+                        <div class="column-label">Input Image</div>
+                        <div class="column-label">MTLoRA</div>
+                        <div class="column-label">DiTASK</div>
+                        <div class="column-label">Ground Truth</div>
+                      </div>
+                      <div class="comparison-images">
+                        <img src="./static/images/depths/val_112_gt_ditask.png" alt="Input Image 1">
+                        <img src="./static/images/depths/val_112_depth_mtlora.png" alt="MTLoRA 1">
+                        <img src="./static/images/depths/val_112_depth_ditask.png" alt="DiTASK 1">
+                        <img src="./static/images/depths/val_112_depth_gt_ditask.png" alt="Ground Truth 1">
+                      </div>
+                    </div>
+                    <div class="comparison-row">
+                      <div class="comparison-images">
+                        <img src="./static/images/depths/val_4_gt_ditask.png" alt="Input Image 2">
+                        <img src="./static/images/depths/val_4_depth_mtlora.png" alt="MTLoRA 2">
+                        <img src="./static/images/depths/val_4_depth_ditask.png" alt="DiTASK 2">
+                        <img src="./static/images/depths/val_4_depth_gt_ditask.png" alt="Ground Truth 2">
+                      </div>
+                    </div>
+                    <div class="comparison-caption">
+                      Samples 1-2 from NYUD MTL dataset
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Item 3-4 (Depth 3-4) -->
+                <div class="item item-depth-2">
+                  <div class="comparison-grid">
+                    <div class="comparison-row">
+                      <div class="comparison-header">
+                        <div class="column-label">Input Image</div>
+                        <div class="column-label">MTLoRA</div>
+                        <div class="column-label">DiTASK</div>
+                        <div class="column-label">Ground Truth</div>
+                      </div>
+                      <div class="comparison-images">
+                        <img src="./static/images/depths/val_509_gt_ditask.png" alt="Input Image 3">
+                        <img src="./static/images/depths/val_509_depth_mtlora.png" alt="MTLoRA 3">
+                        <img src="./static/images/depths/val_509_depth_ditask.png" alt="DiTASK 3">
+                        <img src="./static/images/depths/val_509_depth_gt_ditask.png" alt="Ground Truth 3">
+                      </div>
+                    </div>
+                    <div class="comparison-row">
+                      <div class="comparison-images">
+                        <img src="./static/images/depths/val_148_gt_ditask.png" alt="Input Image 4">
+                        <img src="./static/images/depths/val_148_depth_mtlora.png" alt="MTLoRA 4">
+                        <img src="./static/images/depths/val_148_depth_ditask.png" alt="DiTASK 4">
+                        <img src="./static/images/depths/val_148_depth_gt_ditask.png" alt="Ground Truth 4">
+                      </div>
+                    </div>
+                    <div class="comparison-caption">
+                      Samples 3-4 from NYUD MTL dataset
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Item 5-6 (Depth 5-6) -->
+                <div class="item item-depth-3">
+                  <div class="comparison-grid">
+                    <div class="comparison-row">
+                      <div class="comparison-header">
+                        <div class="column-label">Input Image</div>
+                        <div class="column-label">MTLoRA</div>
+                        <div class="column-label">DiTASK</div>
+                        <div class="column-label">Ground Truth</div>
+                      </div>
+                      <div class="comparison-images">
+                        <img src="./static/images/depths/val_451_gt_ditask.png" alt="Input Image 5">
+                        <img src="./static/images/depths/val_451_depth_mtlora.png" alt="MTLoRA 5">
+                        <img src="./static/images/depths/val_451_depth_ditask.png" alt="DiTASK 5">
+                        <img src="./static/images/depths/val_451_depth_gt_ditask.png" alt="Ground Truth 5">
+                      </div>
+                    </div>
+                    <div class="comparison-row">
+                      <div class="comparison-images">
+                        <img src="./static/images/depths/val_502_gt_ditask.png" alt="Input Image 6">
+                        <img src="./static/images/depths/val_502_depth_mtlora.png" alt="MTLoRA 6">
+                        <img src="./static/images/depths/val_502_depth_ditask.png" alt="DiTASK 6">
+                        <img src="./static/images/depths/val_502_depth_gt_ditask.png" alt="Ground Truth 6">
+                      </div>
+                    </div>
+                    <div class="comparison-caption">
+                      Samples 5-6 from NYUD MTL dataset
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Item 7 (Depth 7) -->
+                <div class="item item-depth-4">
+                  <div class="comparison-grid">
+                    <div class="comparison-row">
+                      <div class="comparison-header">
+                        <div class="column-label">Input Image</div>
+                        <div class="column-label">MTLoRA</div>
+                        <div class="column-label">DiTASK</div>
+                        <div class="column-label">Ground Truth</div>
+                      </div>
+                      <div class="comparison-images">
+                        <img src="./static/images/depths/val_633_gt_ditask.png" alt="Input Image 7">
+                        <img src="./static/images/depths/val_633_depth_mtlora.png" alt="MTLoRA 7">
+                        <img src="./static/images/depths/val_633_depth_ditask.png" alt="DiTASK 7">
+                        <img src="./static/images/depths/val_633_depth_gt_ditask.png" alt="Ground Truth 7">
+                      </div>
+                    </div>
+                    <div class="comparison-caption">
+                      Sample 7 from NYUD MTL dataset
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
     </div>
   </div>
 
@@ -255,13 +492,17 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{mantri2025ditask,
-      title={DiTASK: Multi-Task Fine-Tuning with Diffeomorphic Transformations},
-      author={Krishna Sri Ipsit Mantri and Carola-Bibiane Schönlieb and Bruno Ribeiro and Chaim Baskin and Moshe Eliasof},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      year={2025}
-    }</code></pre>
+    <pre><code>
+      @misc{mantri2025ditaskmultitaskfinetuningdiffeomorphic,
+        title={DiTASK: Multi-Task Fine-Tuning with Diffeomorphic Transformations}, 
+        author={Krishna Sri Ipsit Mantri and Carola-Bibiane Schönlieb and Bruno Ribeiro and Chaim Baskin and Moshe Eliasof},
+        year={2025},
+        eprint={2502.06029},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2502.06029}, 
+  }
+    </code></pre>
   </div>
 </section>
 
@@ -270,7 +511,7 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="https://github.com/ipsitmantri/DiTASK">
+         href="https://arxiv.org/pdf/2502.06029">
         <i class="fas fa-file-pdf"></i>
       </a>
       <a class="icon-link" href="https://github.com/ipsitmantri" class="external-link" disabled>

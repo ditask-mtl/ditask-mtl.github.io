@@ -155,3 +155,58 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.comparison-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.comparison-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.comparison-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.column-label {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #363636;
+}
+
+.comparison-images {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.comparison-images img {
+  width: 24%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Ensure the existing carousel styling works with our images */
+#results-carousel .item {
+  margin: 0;
+  padding: 0;
+}
+
+/* Caption text at the bottom of each carousel slide */
+.comparison-caption {
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+  color: #666;
+}
